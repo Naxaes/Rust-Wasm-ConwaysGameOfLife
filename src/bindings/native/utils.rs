@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 
 use std::time::{Duration, Instant};
+use rand;
 
 #[macro_export]
 macro_rules! log {
@@ -28,3 +29,8 @@ impl<'a> Drop for Timer<'a> {
 }
 
 pub fn set_panic_hook() {}
+
+
+pub fn random() -> f64 {
+    rand::random()  // TODO(ted): Is this the same as js_sys::Math::random()?
+}

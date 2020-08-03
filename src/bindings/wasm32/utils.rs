@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 extern crate web_sys;
+extern crate js_sys;
+
 pub use wasm_bindgen::prelude::*;
 
 // A macro to provide `println!(..)`-style syntax for `console.log` logging.
@@ -45,4 +47,8 @@ pub fn set_panic_hook() {
     // https://github.com/rustwasm/console_error_panic_hook#readme
     #[cfg(feature = "console_error_panic_hook")]
     console_error_panic_hook::set_once();
+}
+
+pub fn random() -> f64 {
+    js_sys::Math::random()  // TODO(ted): Is this the same as rand::random()?
 }

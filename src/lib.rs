@@ -1,5 +1,4 @@
-#[macro_use]
-mod bindings;
+#[macro_use] mod bindings;
 
-pub mod temp;
-pub use temp::*;
+mod code;
+pub use code::*;
