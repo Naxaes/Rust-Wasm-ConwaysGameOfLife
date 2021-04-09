@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use std::time::{Duration, Instant};
+use std::time::Instant;
 use rand;
 
 #[macro_export]

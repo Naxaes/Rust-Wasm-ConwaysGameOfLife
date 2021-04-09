@@ -4,7 +4,8 @@ extern crate itertools;
 use itertools::Itertools;
 use fixedbitset::FixedBitSet;
 
-use crate::bindings::{utils, wasm_bindgen};
+#[allow(unused_imports)]
+use crate::bindings::{self, utils};
 
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global allocator.
@@ -16,17 +17,17 @@ type CellArray = FixedBitSet;
 const CELL_DEAD:  bool = false;
 const CELL_ALIVE: bool = true;
 
-#[cfg_attr(target_arch = "wasm32", wasm_bindgen)]
+#[cfg_attr(target_arch = "wasm32", bindings::wasm_bindgen)]
 pub struct Cell(pub u32, pub u32);
 
-#[cfg_attr(target_arch = "wasm32", wasm_bindgen)]
+#[cfg_attr(target_arch = "wasm32", bindings::wasm_bindgen)]
 pub struct Universe {
     width:  u32,
     height: u32,
     cells:  CellArray,
 }
 
-#[cfg_attr(target_arch = "wasm32", wasm_bindgen)]
+#[cfg_attr(target_arch = "wasm32", bindings::wasm_bindgen)]
 impl Universe {
     pub fn new() -> Universe {
         utils::set_panic_hook();

@@ -28,11 +28,6 @@ pub fn expected_spaceship() -> Universe {
 }
 
 #[wasm_bindgen_test]
-fn pass() {
-    assert_eq!(1 + 1, 2);
-}
-
-#[wasm_bindgen_test]
 pub fn test_tick() {
     // Let's create a smaller Universe with a small spaceship to test!
     let mut input_universe = input_spaceship();
